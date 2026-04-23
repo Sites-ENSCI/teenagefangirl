@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <title>Livre d'or</title>
+	    <link rel="shortcut icon" href="../media/eye.ico" type="image/x-icon" />
+	    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+	    <link href="https://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Hanalei+Fill" rel="stylesheet">
+	    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
+	    <script type="text/javascript" src="guestbook.js"></script>
+	</head>
+
+	<body>
+
+
+		<!-- Page content -->
+		<div class="note">
+			
+            <section class="textnote">
+
+
+            	<div id="print">
+
+	            	<p class="textquote"><i>"Every racy and taboo subject known to man can be found in our video catalog. Or just plain wacky celluloid wonders. Consider it one-stop shopping for all your delightfully depraved entertainment. There's Something Weird for Everyone!"</i> - Site web de <a href="https://www.somethingweird.com/about_us.php" target="_blank"><b>Something Weird Video</b></a></p>
+
+	            	<h2>Avertissement</h2>
+
+	            	<p>ATTENTION ! Le site que vous vous apprêtez à parcourir peut contenir des images de : démembrement, mutilation, cannibalisme, torture humaine et animale, agression, meurtre, nécrophilie, Charles Manson.<br><i>Viewer discretion is advised...</i></p>
+
+
+					<img src="../media/fan.png" style="width: 600px;">
+					<p style="font-size: 14px; text-align: center;">Montage personnel.</p>
+
+					<h2>Guestbook</h2>
+
+            	</div>
+
+
+            	<div class="container" ng-app="formPreviewer" ng-controller="reviewController as reviewCtrl">
+					<div class="row">
+				    	<form id="form" ng-submit="reviewCtrl.addReview()">
+				      		<div class="col-md-4">
+				        		<div>
+				          			<label>Nom</label>
+				          			<input id="name" name="name" ng-model="reviewCtrl.review.name" type="text"/>
+				        		</div>
+				        		<div>
+				          			<label>Message</label>
+				          			<textarea id="message" name="message" ng-model="reviewCtrl.review.comments" class="form-control" rows="3"></textarea>
+				        		</div>
+				        		<input type="submit" id="submit" class="btn btn-lg btn-primary" value="Envoyer"/>
+				      		</div>
+						</form>
+
+						<div class="col-md-4">
+						    <div ng-repeat="review in reviewCtrl.reviews">
+						        <ul>
+						          	<li class="date"> Date: {{review.date}} </li>
+						          	<li> Nom : {{review.name}} </li>
+						          	<li> Message : {{review.comments}} </li>
+						        </ul>
+						    </div>
+						</div>
+					</div>
+				</div>
+
+            	
+				
+				
+			</section>
+
+			
+
+			<p id="notesprec">Télécharger des goodies</p>
+			<img src="../media/arrowdown.gif" style="width: 60px;"><br>
+
+			<button id="submit"><a href="goodies.zip" download>Fonds d'écran</a></button>
+
+
+		</div>
+		
+
+
+
+
+	</body>
+</html>
